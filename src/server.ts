@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import serverless from 'serverless-http';
+import { commentsController } from './controller/comments';
 
 const app = express();
 const router = express.Router();
-const tabletsRouter = express.Router();
 
 app.use(cors());
 app.use(express.json());
@@ -15,11 +15,8 @@ app.get('/.netlify/functions/server', (req, res) => {
   res.send("server is running");
 });
 
-// router.get('/:phoneId', phonesDescriptionController.getDescription);
-// router.get('/', phonesController.getPhones);
-
-app.use('/.netlify/functions/server/tablets', tabletsRouter)
-
-// tabletsRouter.get('/', tabletsController.getTablets);
+router.get('/:phoneId', commentsController.getComment);
+router.get('/', commentsController.getComments);
+router.post('/', commentsController.addComment);
 
 export const handler = serverless(app);
