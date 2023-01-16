@@ -1,5 +1,5 @@
-import { Comments } from "src/model/comments";
-import { Comment } from "src/types/Comment";
+import { Comments } from "../model/comments";
+import { Comment } from "../types/Comment";
 
 class CommentsService {
   async createComment(data: Comment) {

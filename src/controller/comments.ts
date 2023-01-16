@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { commentsService } from "src/service/comments";
+import { commentsService } from "../service/comments";
 
 class CommentsController {
   async addComment(req: Request, res: Response) {

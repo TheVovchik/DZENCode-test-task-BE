@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import { CommentDB } from 'src/types/Comment';
+import { CommentDB } from '../types/Comment';
 import { sequelize } from './db';
 
 export interface UserModel extends Model<CommentDB>, CommentDB {}
