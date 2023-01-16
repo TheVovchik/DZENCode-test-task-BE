@@ -5,7 +5,7 @@ class CommentsService {
   async createComment(data: Comment) {
     const comment = await Comments.create({ ...data });
 
-    if (comment.id) {
+    if (comment.id && comment.prevId) {
       await this.appendComment(comment.prevId, comment.id);
     }
 
