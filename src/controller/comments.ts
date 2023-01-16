@@ -1,5 +1,3 @@
-'use strict';
-
 import { Request, Response } from "express";
 import { commentsService } from "src/service/comments";
 

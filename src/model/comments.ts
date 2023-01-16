@@ -1,10 +1,8 @@
-'use strict';
-
 import { DataTypes, Model } from 'sequelize';
 import { CommentDB } from 'src/types/Comment';
 import { sequelize } from './db';
 
-interface UserModel extends Model<CommentDB>, CommentDB {}
+export interface UserModel extends Model<CommentDB>, CommentDB {}
 
 export const Comments = sequelize.define<UserModel>('Comment', {
   id: {

@@ -1,5 +1,3 @@
-'use strict';
-
 import { Comments } from "src/model/comments";
 import { Comment } from "src/types/Comment";
 
