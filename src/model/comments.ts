@@ -16,7 +16,7 @@ export const Comments = sequelize.define<UserModel>('Comment', {
     allowNull: false,
   },
   nextId: {
-    type: DataTypes.ARRAY(DataTypes.INTEGER),
+    type: DataTypes.JSON,
     allowNull: true,
   },
   prevId: {
@@ -38,7 +38,7 @@ export const Comments = sequelize.define<UserModel>('Comment', {
   text: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
+  }
 },
   {
     tableName: 'Comments',
