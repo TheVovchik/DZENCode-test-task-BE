@@ -1,13 +1,21 @@
 import { Request, Response } from "express";
 import { commentsService } from "../service/comments";
+import formidable from 'formidable';
 import svgCaptcha from 'svg-captcha';
 
 class CommentsController {
   async addComment(req: Request, res: Response) {
-    const comment = await commentsService.createComment(req.body);
-    
-    res.statusCode = 200;
-    res.json(comment);
+    const form = formidable({ });
+
+    form.parse(req, async (err, _fields, _files) => {
+      if (err) {
+        return;
+      }
+      const comment = await commentsService.createComment(req.body);
+
+      res.statusCode = 200;
+      res.json(comment);
+    });
   };
 
   async getComment(req: Request, res: Response) {
