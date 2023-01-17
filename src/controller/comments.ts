@@ -3,6 +3,12 @@ import { commentsService } from "../service/comments";
 import svgCaptcha from 'svg-captcha';
 
 class CommentsController {
+  captcha: string;
+
+  constructor(captcha: string) {
+    this.captcha = captcha;
+  }
+
   async addComment(req: Request, res: Response) {
     const comment = await commentsService.createComment(req.body);
     
@@ -44,9 +50,20 @@ class CommentsController {
       noise: 10,
     }
     const captcha = svgCaptcha.create(options);
+    this.captcha = captcha.text;
 
-    res.status(200).send(captcha);
+    res.status(200).send(captcha.data);
+  }
+
+  checkCaptcha(req: Request, res: Response) {
+    const { value } = req.query;
+
+    if (value === this.captcha) {
+      res.json(true);
+    }
+
+    res.json(false);
   }
 }
 
-export const commentsController = new CommentsController();
+export const commentsController = new CommentsController('');
