@@ -10,6 +10,7 @@ app.use(express.json());
 app.use('/data', router);
 
 router.get('/', commentsController.getComments);
+router.get('/captcha', commentsController.getCaptcha);
 router.get('/:commentId', commentsController.getComment);
 router.post('/', commentsController.addComment);
 

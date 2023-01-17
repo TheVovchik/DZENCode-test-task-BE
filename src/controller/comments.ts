@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { commentsService } from "../service/comments";
+import svgCaptcha from 'svg-captcha';
 
 class CommentsController {
   async addComment(req: Request, res: Response) {
@@ -35,6 +36,17 @@ class CommentsController {
 
     res.statusCode = 200;
     res.json(comment);
+  }
+
+  getCaptcha(req: Request, res: Response) {
+    const options = {
+      size: 6,
+      noise: 10,
+    }
+    const captcha = svgCaptcha.create(options);
+
+    res.type('svg');
+    res.status(200).send(captcha);
   }
 }
 
