@@ -7,14 +7,14 @@ class CommentsController {
   async addComment(req: Request, res: Response) {
     const form = formidable({ });
 
-    form.parse(req, async (err, _fields, _files) => {
+    form.parse(req, async (err, fields, _files) => {
       if (err) {
         return;
       }
-      const comment = await commentsService.createComment(req.body);
+      // const comment = await commentsService.createComment(req.body);
 
       res.statusCode = 200;
-      res.json(comment);
+      res.json(fields);
     });
   };
 
