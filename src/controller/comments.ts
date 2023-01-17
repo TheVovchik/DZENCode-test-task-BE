@@ -45,7 +45,6 @@ class CommentsController {
     }
     const captcha = svgCaptcha.create(options);
 
-    res.type('svg');
     res.status(200).send(captcha);
   }
 }
