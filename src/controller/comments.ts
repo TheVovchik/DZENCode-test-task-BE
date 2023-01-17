@@ -52,8 +52,7 @@ class CommentsController {
     const captcha = svgCaptcha.create(options);
     this.captcha = captcha.text;
 
-    res.statusCode = 200;
-    res.json({ data: captcha.data });
+    res.status(200).send(captcha);
   }
 
   checkCaptcha(req: Request, res: Response) {
