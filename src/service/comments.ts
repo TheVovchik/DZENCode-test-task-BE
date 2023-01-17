@@ -1,19 +1,8 @@
 import { Comments } from "../model/comments";
-import { Comment } from "../types/Comment";
 
 class CommentsService {
-  async createComment(data: Comment) {
-    const newComment = {
-      postId: data.postId,
-      prevId: data.prevId ?? null,
-      homepage: data.homepage ?? null,
-      nextId: null,
-      userName: data.userName,
-      email: data.email,
-      text: data.text,
-    };
-  
-    const comment = await Comments.create(newComment);
+  async createComment(data: any) {
+    const comment = await Comments.create({ ...data });
 
     if (comment.id && comment.prevId) {
       await this.appendComment(comment.prevId, comment.id);

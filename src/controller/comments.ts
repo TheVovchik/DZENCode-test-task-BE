@@ -11,10 +11,10 @@ class CommentsController {
       if (err) {
         return;
       }
-      // const comment = await commentsService.createComment(req.body);
+      const comment = await commentsService.createComment(fields);
 
       res.statusCode = 200;
-      res.json(fields);
+      res.json(comment);
     });
   };
 
