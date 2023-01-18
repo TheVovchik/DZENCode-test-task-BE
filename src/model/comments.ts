@@ -23,6 +23,10 @@ export const Comments = sequelize.define<UserModel>('Comment', {
     type: DataTypes.INTEGER,
     allowNull: true,
   },
+  rating: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
   userName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -37,6 +41,10 @@ export const Comments = sequelize.define<UserModel>('Comment', {
   },
   text: {
     type: DataTypes.STRING,
+    allowNull: false,
+  },
+  voted: {
+    type: DataTypes.JSON,
     allowNull: false,
   }
 },
