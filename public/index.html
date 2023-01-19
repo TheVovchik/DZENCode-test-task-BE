@@ -188,7 +188,7 @@
 	<p 
 		class="api__url"
 	>
-		API_URL: https://team-404-mate.netlify.app/.netlify/functions/server
+		API_URL: https://dzen-task.onrender.com/v1
 	</p>
 
 	<input type="checkbox" id="data_one" name="fruit-1" >
@@ -201,73 +201,19 @@
 		<ul class="api__list-phones">
 			<div class="data">
 				<p>Media type: application / json</p>
-				<div>Schema <span class="red">Phone</span></div>
+				<div>Schema <span class="red">Captcha</span></div>
 				<div>[</div>
 				<div style="margin-left: 8px">{</div>
 				<div class="data-structure">
-					<div class="data-name">id:</div>
+					<div class="data-name">text:</div>
 					<div class="data-type">string,</div>
 				</div>
 
 				<div class="data-structure">
-					<div class="data-name">itemId:</div>
+					<div class="data-name">data:</div>
 					<div class="data-type">string,</div>
 				</div>
 
-				<div class="data-structure">
-					<div class="data-name">phoneId:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">category:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">image:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">name:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">color:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">fullPrice:</div>
-					<div class="data-type">number,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">price:</div>
-					<div class="data-type">number,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">year:</div>
-					<div class="data-type">number,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">screen:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">capacity:</div>
-					<div class="data-type">string,</div>
-				</div>
-
-				<div class="data-structure">
-					<div class="data-name">ram:</div>
-					<div class="data-type">string</div>
-				</div>
 				<div style="margin-left: 8px">}</div>
 				<div>]</div>
 			</div>
@@ -275,72 +221,16 @@
 
 			<li>
 				<span class="description">
-					GET: all phones data
+					GET: captcha
 				</span>
 				<a
-					href="https://team-404-mate.netlify.app/.netlify/functions/server/phones"
+					href="https://dzen-task.onrender.com/v1/data/captcha"
 					target="_blank"
 				>
 					https://team-404-mate.netlify.app/.netlify/functions/server/phones
 				</a>
 
-				<p>Response: <span class="red">Phone</span></p>
-			</li>
-
-			<li>
-				<span class="description">
-					GET: ?query={itemId,itemId} phones by itemId
-				</span>
-				<a
-					href="https://team-404-mate.netlify.app/.netlify/functions/server/phones?query=apple-iphone-11-pro-max-256gb-gold,apple-iphone-11-pro-max-512gb-spacegray"
-					target="_blank"
-				>
-					https://team-404-mate.netlify.app/.netlify/functions/server/phones?query=apple-iphone-11-pro-max-256gb-gold,apple-iphone-11-pro-max-512gb-spacegray
-				</a>
-
-				<p>Response: <span class="red">Phone</span></p>
-			</li>
-
-			<li>
-				<span class="description">
-					GET: ?orderType=order phones ordered by key = order and descending order
-				</span>
-				<a
-					href="https://team-404-mate.netlify.app/.netlify/functions/server/phones?orderType=price"
-					target="_blank"
-				>
-					https://team-404-mate.netlify.app/.netlify/functions/server/phones?orderType=price
-				</a>
-
-				<p>Response: <span class="red">Phone</span></p>
-			</li>
-
-			<li>
-				<span class="description">
-					GET: ?orderType=random phones every time in random order
-				</span>
-				<a
-					href="https://team-404-mate.netlify.app/.netlify/functions/server/phones?orderType=random"
-					target="_blank"
-				>
-					https://team-404-mate.netlify.app/.netlify/functions/server/phones?orderType=random
-				</a>
-
-				<p>Response: <span class="red">Phone</span></p>
-			</li>
-
-			<li>
-				<span class="description">
-					GET: ?quantity=any quantity of phones objects
-				</span>
-				<a
-					href="https://team-404-mate.netlify.app/.netlify/functions/server/phones?quantity=any"
-					target="_blank"
-				>
-					https://team-404-mate.netlify.app/.netlify/functions/server/phones?quantity=any
-				</a>
-
-				<p>Response: <span class="data-type">number</span></p>
+				<p>Response: <span class="red">Captcha</span></p>
 			</li>
 		</ul>
 	</section>
