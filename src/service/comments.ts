@@ -1,3 +1,4 @@
+import { Rating } from "src/types/Rating";
 import { Comments } from "../model/comments";
 
 class CommentsService {
@@ -41,6 +42,24 @@ class CommentsService {
     const comments = await Comments.findAll();
 
     return comments;
+  }
+
+  async patchOne(commentId: number, data: Rating) {
+    const thisComment = await this.getOne(commentId);
+    let thisVoted: string[] = [];
+
+    if (thisComment) {
+      thisVoted = thisComment.voted;
+      thisVoted.push(data.ip);
+    }
+
+    const comment = await Comments.update({ rating: data.rating, voted: thisVoted}, {
+      where: {
+        id: commentId,
+      },
+    })
+
+    return comment;
   }
 }
 

@@ -13,6 +13,7 @@ router.get('/', commentsController.getComments);
 router.get('/captcha', commentsController.getCaptcha);
 router.get('/:commentId', commentsController.getComment);
 router.post('/', commentsController.addComment);
+router.patch('/:commentId', commentsController.patchComment);
 
 app.listen(5000, () => (
   console.log('server is running')

@@ -46,6 +46,21 @@ class CommentsController {
     res.json(comment);
   }
 
+  async patchComment(req: Request, res: Response) {
+    const { commentId } = req.params;
+
+    const comment = await commentsService.patchOne(+commentId, req.body);
+
+    if (!comment) {
+      res.statusCode = 404;
+
+      return;
+    }
+
+    res.statusCode = 200;
+    res.json(comment);
+  }
+
   getCaptcha(req: Request, res: Response) {
     const options = {
       size: 6,
@@ -55,6 +70,7 @@ class CommentsController {
 
     res.status(200).send(captcha);
   }
+
 }
 
 export const commentsController = new CommentsController();
