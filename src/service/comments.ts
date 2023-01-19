@@ -45,19 +45,15 @@ class CommentsService {
   }
 
   async patchOne(commentId: number, data: Rating) {
-    const thisComment = await this.getOne(commentId);
-    let thisVoted: string[] = [data.ip];
-
-    if (thisComment) {
-      thisVoted = [...thisComment.voted, data.ip];
-    }
-
     const comment = await Comments
-      .update({ rating: data.rating, voted: thisVoted}, {
+      .update({ rating: data.rating, voted: data.newVoted}, {
         where: {
           id: commentId,
         },
       });
+
+    const thisComment = await this.getOne(commentId);
+
 
     return comment;
   }
