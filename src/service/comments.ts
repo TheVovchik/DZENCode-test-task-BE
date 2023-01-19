@@ -45,7 +45,7 @@ class CommentsService {
   }
 
   async patchOne(commentId: number, data: Rating) {
-    const comment = await Comments
+    await Comments
       .update({ rating: data.rating, voted: data.newVoted}, {
         where: {
           id: commentId,
@@ -55,7 +55,7 @@ class CommentsService {
     const thisComment = await this.getOne(commentId);
 
 
-    return comment;
+    return thisComment;
   }
 }
 
