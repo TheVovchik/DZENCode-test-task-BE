@@ -7,7 +7,7 @@ const router = express.Router();
 
 app.use(cors());
 app.use(express.json());
-app.use('/data', router);
+app.use('/v1/data', router);
 
 app.get('/v1', (req, res) => {
   res.sendFile('/pubic/index.html')
