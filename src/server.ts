@@ -28,14 +28,7 @@ app.use('/v1/static', express.static('public'));
 
 app.get('/v1/static', (req, res) => {
   res.sendFile('/pubic/index.html')
-})
-
-app.use('/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-app.get('docs.json', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(swaggerSpec);
-})
+});
 
 /**
  * @openapi
@@ -94,6 +87,13 @@ router.post('/', commentsController.addComment);
  *  
 */
 router.patch('/:commentId', commentsController.patchComment);
+
+app.use('/v1/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+app.get('docs.json', (req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(swaggerSpec);
+})
 
 app.listen(5000, () => {
   console.log('server is running');
