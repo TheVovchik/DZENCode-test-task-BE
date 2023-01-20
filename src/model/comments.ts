@@ -15,7 +15,7 @@ export const Comments = sequelize.define<UserModel>('Comment', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  nextId: {
+  nextIds: {
     type: DataTypes.JSON,
     allowNull: true,
   },
@@ -43,7 +43,7 @@ export const Comments = sequelize.define<UserModel>('Comment', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  voted: {
+  votes: {
     type: DataTypes.JSON,
     allowNull: false,
   }
