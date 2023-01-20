@@ -18,13 +18,13 @@ class CommentsService {
     if (previous) {
       let newNext = [nextId];
 
-      if (previous.nextId) {
-        newNext = previous.nextId;
+      if (previous.nextIds) {
+        newNext = previous.nextIds;
         newNext.push(nextId);
       }
       
 
-      await Comments.update({ nextId: newNext }, {
+      await Comments.update({ nextIds: newNext }, {
         where: {
           id: thisId,
         },
@@ -46,7 +46,7 @@ class CommentsService {
 
   async patchOne(commentId: number, data: Rating) {
     await Comments
-      .update({ rating: data.rating, voted: data.newVoted}, {
+      .update({ rating: data.rating, votes: data.newVotes}, {
         where: {
           id: commentId,
         },
