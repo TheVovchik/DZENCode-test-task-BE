@@ -12,6 +12,7 @@ const options: swaggerJsdoc.Options = {
       title: "REST API docs",
       version
     },
+    openapi: "3.0.0",
   }
 };
 
