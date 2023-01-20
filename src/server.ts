@@ -39,7 +39,7 @@ app.get('docs.json', (req, res) => {
 
 /**
  * @openapi
- * /captcha:
+ * '/captcha':
  *   get:
  *      tags:
  *        - Captcha
@@ -51,7 +51,7 @@ app.get('docs.json', (req, res) => {
  *            content: 
  *              application/json:
  *                 schema:
- *                    CaptchaResponse: 
+ *                    CaptchaResponse:
  *                      type: object
  *                      properties:
  *                        text: string
@@ -66,8 +66,8 @@ router.post('/', commentsController.addComment);
 
 /**
  * @openapi
- * /:commentId:
- *   patch:
+ * '/:commentId':
+ *  patch:
  *      tags:
  *        - comment
  *        summary: update rating and voted list
