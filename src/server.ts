@@ -41,7 +41,7 @@ app.get('docs.json', (req, res) => {
  * @openapi
  * /captcha:
  *   get:
- *      tag:
+ *      tags:
  *        - Captcha
  *        summary: generate captcha object
  *        description: generate captcha object with two fields: text of captcha and svg picture
@@ -68,7 +68,7 @@ router.post('/', commentsController.addComment);
  * @openapi
  * /:commentId:
  *   patch:
- *      tag:
+ *      tags:
  *        - comment
  *        summary: update rating and voted list
  *        description: update rating and voted list by comment ID
