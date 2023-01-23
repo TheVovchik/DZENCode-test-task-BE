@@ -3,7 +3,7 @@ import { Comments } from "../model/comments";
 
 class CommentsService {
   async createComment(data: any) {
-    const comment = await Comments.create({ ...data });
+    const comment = await Comments.create({ ...data, votes: [] });
 
     if (comment.id && comment.prevId) {
       await this.appendComment(comment.prevId, comment.id);
