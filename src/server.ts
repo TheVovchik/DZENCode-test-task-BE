@@ -36,8 +36,8 @@ app.get('/v1/static', (req, res) => {
  *   get:
  *      tags:
  *        - Captcha
- *        summary: generate captcha object
- *        description: generate captcha object with two fields: text of captcha and svg picture
+ *        summary: 'generate captcha object'
+ *        description: 'generate captcha object with two fields: text of captcha and svg picture'
  *        responses:
  *          200:
  *            description: Success
@@ -63,8 +63,8 @@ router.post('/', commentsController.addComment);
  *  patch:
  *      tags:
  *        - comment
- *        summary: update rating and voted list
- *        description: update rating and voted list by comment ID
+ *        summary: 'update rating and voted list'
+ *        description: 'update rating and voted list by comment ID'
  *        requestBody:
  *          required: true
  *          content: 
