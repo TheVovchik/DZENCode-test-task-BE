@@ -34,21 +34,18 @@ app.get('/v1/static', (req, res) => {
  * @swagger
  * '/captcha':
  *   get:
- *      tags:
- *        - Captcha
- *        summary: 'generate captcha object'
- *        description: 'generate captcha object with two fields: text of captcha and svg picture'
- *        responses:
- *          200:
- *            description: Success
- *            content: 
- *              application/json:
- *                 schema:
- *                    CaptchaResponse:
- *                      type: object
- *                      properties:
- *                        text: string
- *                        data: string
+ *     description: 'generate captcha object with two fields: text of captcha and svg picture'
+ *       responses:
+ *         200:
+ *           description: Success
+ *           content: 
+ *             application/json:
+ *               schema:
+ *                 CaptchaResponse:
+ *                   type: object
+ *                   properties:
+ *                     text: string
+ *                     data: string
  *  
 */
 router.get('/captcha', commentsController.getCaptcha);
@@ -61,29 +58,26 @@ router.post('/', commentsController.addComment);
  * @swagger
  * '/:commentId':
  *  patch:
- *      tags:
- *        - comment
- *        summary: 'update rating and voted list'
- *        description: 'update rating and voted list by comment ID'
- *        requestBody:
- *          required: true
- *          content: 
- *              application/json:
- *                 schema:
- *                    RatingUpdate: 
- *                      type: object
- *                      properties:
- *                        rating: number
- *                        newVoted: array of strings
- *        responses:
- *          200:
- *            description: Success
- *            content: 
- *              application/json:
- *                 schema:
- *                    $ref: '#/components/types/CreateComment'
- *          404:
- *            description: Entity doesn't exist
+ *    description: 'update rating and voted list by comment ID'
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            RatingUpdate: 
+ *              type: object
+ *                properties:
+ *                  rating: number
+ *                  newVoted: array of strings
+ *    responses:
+ *      200:
+ *        description: Success
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/types/CreateComment'
+ *       404:
+ *         description: Entity doesn't exist
  *  
 */
 router.patch('/:commentId', commentsController.patchComment);
