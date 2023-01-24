@@ -1,13 +1,16 @@
 import { Request, Response } from "express";
 import { commentsService } from "../service/comments";
 import formidable from 'formidable';
+import path from 'path';
 import svgCaptcha from 'svg-captcha';
+
+const fileDir = path.join(__dirname, '/public');
 
 class CommentsController {
   async addComment(req: Request, res: Response) {
     const form = formidable({ });
 
-    form.parse(req, async (err, fields, _files) => {
+    form.parse(req, async (err, fields, files) => {
       if (err) {
         return;
       }

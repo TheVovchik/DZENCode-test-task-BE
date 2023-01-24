@@ -31,7 +31,7 @@ app.get('/v1/static', (req, res) => {
 });
 
 /**
- * @openapi
+ * @swagger
  * '/captcha':
  *   get:
  *      tags:
@@ -58,7 +58,7 @@ router.get('/:commentId', commentsController.getComment);
 router.post('/', commentsController.addComment);
 
 /**
- * @openapi
+ * @swagger
  * '/:commentId':
  *  patch:
  *      tags:

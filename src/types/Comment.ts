@@ -1,5 +1,5 @@
 /**
- * @openapi
+ * @swagger
  * components:
  *  schemas:
  *    CreateComment:
